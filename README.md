@@ -43,10 +43,6 @@ Let's go to the movies!
 ![Entity Relationship Diagram](https://i.imgur.com/DTgzf9p.jpg "Entity Relationship Diagram")
 
 
-### **_Sources_**
-
-Style and organization will be inspired by [Netflix's](https://www.netflix.com) 2022 styling.
-
 ### ***Trello Board***
 
 [Review App Trello Board](https://trello.com/b/d8YA7n90/project-3-group-project-full-stack-pern)
@@ -62,4 +58,4 @@ Style and organization will be inspired by [Netflix's](https://www.netflix.com) 
 
 MIT License
 
-###### Copyright &copy; 2022 Austin Taylor
+###### Copyright &copy; 2022 Alexander Ab, Deonte LaBorde, Russell Ochoa, Austin Taylor
