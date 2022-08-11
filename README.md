@@ -5,6 +5,7 @@
 ## Date: 08/19/2022
 
 ### By:
+
 #### Alexander Ab [GitHub](https://github.com/Arkeda221) | [LinkedIn](https://www.linkedin.com/in/alexander-ab-831b01182/)
 
 #### Deonte LaBorde [GitHub](https://github.com/deontelaborde) | [LinkedIn](https://www.linkedin.com/in/deonte-laborde/)
@@ -21,10 +22,11 @@
 
 [Deployed Site](https://google.com)
 
-
 ---
+
 ### **_Description_**
-'Opinions are like...' well, you know the rest. Everybody's got one.  And who DOESN'T have an opinion about their favorite (or least favorite) movies?
+
+'Opinions are like...' well, you know the rest. Everybody's got one. And who DOESN'T have an opinion about their favorite (or least favorite) movies?
 <BLANK> is a full-stack PERN app that gives movie buffs a voice by creating an account to track and rate the movies they love, hate and everything in between.
 So sign up, login and get your Roger Ebert on!
 Let's go to the movies!
@@ -34,27 +36,31 @@ Let's go to the movies!
 ### **_Technologies Used_**
 
 #### Pern Stack
+
 - PostgreSQL + Sequelize
 - Express.js
 - Node.js
 - JavaScript
 
 #### **_Entity Relationship Diagram:_**
-![Entity Relationship Diagram](https://i.imgur.com/DTgzf9p.jpg "Entity Relationship Diagram")
 
+![Entity Relationship Diagram](https://i.imgur.com/DTgzf9p.jpg 'Entity Relationship Diagram')
 
-### ***Trello Board***
+### **_Planning_**
 
-[Review App Trello Board](https://trello.com/b/d8YA7n90/project-3-group-project-full-stack-pern)
+#### [Review App Trello Board](https://trello.com/b/d8YA7n90/project-3-group-project-full-stack-pern)
+
+#### [Pitch Deck](https://docs.google.com/presentation/d/11M8HGzGrm8CSpOnwoeq4S8t1Yv0SOahvGrRx6fpsFOU/edit?usp=sharing)
 
 <br />
 
-### ***Future Features***
-2. map view
-4. programiatically averaged ratings
-5. user to user interaction (post / comment / like / dislike)
+### **_Future Features_**
 
-### ***License***
+2. map view
+3. programiatically averaged ratings
+4. user to user interaction (post / comment / like / dislike)
+
+### **_License_**
 
 MIT License
 
