@@ -17,7 +17,7 @@
 
 ### **_Resources_**
 
-[Frontend Repo](https://google.com)
+[Frontend Repo](https://github.com/deontelaborde/review-app-frontend)
 
 [Deployed Site](https://google.com)
 
