@@ -14,7 +14,9 @@ const GetMovieDetails = async (req, res) => {
 
 const GetAllMovies = async (req, res) => {
   try {
-    const movies = await Movie.findAll();
+    const movies = await Movie.findAll({
+      include: [{ model: Review, as: 'movie_reviews' }]
+    });
     res.send(movies);
   } catch (error) {
     throw error;
