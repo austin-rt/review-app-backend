@@ -52,14 +52,6 @@ Let's go to the movies!
 
 #### [Pitch Deck](https://docs.google.com/presentation/d/11M8HGzGrm8CSpOnwoeq4S8t1Yv0SOahvGrRx6fpsFOU/edit?usp=sharing)
 
-<br />
-
-### **_Future Features_**
-
-2. map view
-3. programiatically averaged ratings
-4. user to user interaction (post / comment / like / dislike)
-
 ### **_License_**
 
 MIT License
