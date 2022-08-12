@@ -6,7 +6,7 @@ const falso = require('@ngneat/falso');
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const reviews = await Promise.all(
-      [...Array(100)].map(async () => {
+      [...Array(1000)].map(async () => {
         let user = await User.findOne({ order: sequelize.random(), raw: true });
         let movie = await Movie.findOne({
           order: sequelize.random(),
