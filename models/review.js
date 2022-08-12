@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Review.belongsTo(models.User, {
         foreignKey: 'user_id',
-        as: 'user',
+        as: 'owner',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
       Review.belongsTo(models.Movie, {
         foreignKey: 'movie_id',
-        as: 'movies',
+        as: 'reviews',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })

@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       User.hasMany(models.Review, {
         foreignKey: 'user_id',
-        as: 'user',
+        as: 'user_reviews',
         onDelete: 'cascade',
         onUpdate: 'cascade'
       })
