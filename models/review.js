@@ -1,5 +1,5 @@
-'use strict'
-const { Model } = require('sequelize')
+'use strict';
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Review extends Model {
     /**
@@ -11,16 +11,16 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Review.belongsTo(models.User, {
         foreignKey: 'user_id',
-        as: 'owner',
+        as: 'user_reviews',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
-      })
+      });
       Review.belongsTo(models.Movie, {
         foreignKey: 'movie_id',
-        as: 'reviews',
+        as: 'movie_reviews',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
-      })
+      });
     }
   }
   Review.init(
@@ -59,6 +59,6 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'Review',
       tableName: 'reviews'
     }
-  )
-  return Review
-}
+  );
+  return Review;
+};
