@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/austin-rt/review-app-backend#readme",
   "dependencies": {
+    "@ngneat/falso": "^6.1.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
