@@ -1,10 +1,8 @@
 const { Review } = require('../models')
 
-
 const GetAllReviews = async (req, res) => {
   try {
-    const reviews = await Review.findAll({}
-    )
+    const reviews = await Review.findAll({})
     res.send(reviews)
   } catch (error) {
     throw error
@@ -37,7 +35,7 @@ const UpdateReview = async (req, res) => {
     throw error
   }
 }
-const DeleteReview= async (req, res) => {
+const DeleteReview = async (req, res) => {
   try {
     let reviewId = parseInt(req.params.review_id)
     await Review.destroy({ where: { id: reviewId } })
@@ -51,5 +49,4 @@ module.exports = {
   CreateReview,
   UpdateReview,
   DeleteReview
-  
 }

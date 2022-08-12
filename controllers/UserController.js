@@ -9,14 +9,16 @@ const GetUsers = async (req, res) => {
   }
 }
 
-const GetUserById = async (req,res) => {
+const GetUserById = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.user_id)
+    const user = await User.findByPk(req.params.user_id, {
+      include: [{ model: Review, as: 'user_reviews' }]
+    })
     res.send(user)
-  }catch(error) {
+  } catch (error) {
     throw error
   }
-} 
+}
 
 const CreateUser = async (req, res) => {
   try {
@@ -26,7 +28,6 @@ const CreateUser = async (req, res) => {
     throw error
   }
 }
-
 
 module.exports = {
   GetUsers,

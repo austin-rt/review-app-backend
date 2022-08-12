@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Movie.hasMany(models.Review, {
         foreignKey: 'movie_id',
-        as: 'movies',
         onDelete: 'cascade',
         onUpdate: 'cascade'
       })
