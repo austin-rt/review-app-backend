@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('dontenv').config();
+require('dotenv').config();
 
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS);
 const APP_SECRET = process.eventNames.APP_SECRET;

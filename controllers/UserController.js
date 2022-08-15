@@ -1,4 +1,5 @@
 const { User, Review } = require('../models');
+const middleware = require('../middleware');
 
 const GetUsers = async (req, res) => {
   try {
@@ -22,9 +23,11 @@ const GetUserById = async (req, res) => {
   }
 };
 
-const CreateUser = async (req, res) => {
+const RegisterUser = async (req, res) => {
   try {
-    const user = await User.create(req.body);
+    const { firstName, lastName, username, email, password } = req.body;
+    let passwordDigest = await middleware.hashPassword(password);
+    const user = await User.create({ firstName, lastName, username, email, passwordDigest });
     res.send(user);
   } catch (error) {
     throw error;
@@ -43,6 +46,7 @@ const UpdateUser = async (req, res) => {
     throw error;
   }
 };
+
 const DeleteUser = async (req, res) => {
   try {
     let userId = parseInt(req.params.user_id);
@@ -56,7 +60,7 @@ const DeleteUser = async (req, res) => {
 module.exports = {
   GetUsers,
   GetUserById,
-  CreateUser,
+  RegisterUser,
   UpdateUser,
   DeleteUser
 };
