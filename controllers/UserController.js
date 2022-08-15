@@ -1,4 +1,6 @@
 const { User, Review } = require('../models');
+const middleware = require('../middleware');
+const { Op } = require('sequelize');
 
 const GetUsers = async (req, res) => {
   try {
@@ -22,10 +24,39 @@ const GetUserById = async (req, res) => {
   }
 };
 
-const CreateUser = async (req, res) => {
+const RegisterUser = async (req, res) => {
   try {
-    const user = await User.create(req.body);
+    const { firstName, lastName, username, email, password } = req.body;
+    let passwordDigest = await middleware.hashPassword(password);
+    const user = await User.create({ firstName, lastName, username, email, passwordDigest });
     res.send(user);
+  } catch (error) {
+    throw error;
+  }
+};
+
+const LoginUser = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        [Op.or]: [
+          { email: req.body.email },
+          { username: req.body.username }
+        ]
+      },
+      raw: true
+    });
+    if (user && (await middleware.comparePassword(user.passwordDigest, req.body.password))
+    ) {
+      let payload = {
+        id: user.id,
+        username: user.username,
+        email: user.email
+      };
+      let token = middleware.createToken(payload);
+      return res.send({ user: payload, token });
+    }
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' });
   } catch (error) {
     throw error;
   }
@@ -43,6 +74,7 @@ const UpdateUser = async (req, res) => {
     throw error;
   }
 };
+
 const DeleteUser = async (req, res) => {
   try {
     let userId = parseInt(req.params.user_id);
@@ -56,7 +88,8 @@ const DeleteUser = async (req, res) => {
 module.exports = {
   GetUsers,
   GetUserById,
-  CreateUser,
+  RegisterUser,
+  LoginUser,
   UpdateUser,
-  DeleteUser
+  DeleteUser,
 };
