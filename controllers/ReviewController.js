@@ -12,6 +12,7 @@ const CreateReview = async (req, res) => {
   try {
     let userId = parseInt(req.params.user_id)
     let movieId = parseInt(req.params.movie_id)
+  
     let reviewBody = {
       userId,
       movieId,
