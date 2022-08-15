@@ -39,10 +39,10 @@ const LoginUser = async (req, res) => {
   try {
     const user = await User.findOne({
       where: {
-        [Op.or]: [
-          { email: req.body.email },
-          { username: req.body.username }
-        ]
+        // [Op.or]: [
+          // { email: req.body.email },
+          username: req.body.username
+        // ]
       },
       raw: true
     });
