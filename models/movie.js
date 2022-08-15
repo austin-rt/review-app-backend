@@ -1,5 +1,5 @@
-'use strict'
-const { Model } = require('sequelize')
+'use strict';
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Movie extends Model {
     /**
@@ -11,9 +11,10 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Movie.hasMany(models.Review, {
         foreignKey: 'movie_id',
+        as: 'movie_reviews',
         onDelete: 'cascade',
         onUpdate: 'cascade'
-      })
+      });
     }
   }
   Movie.init(
@@ -36,6 +37,6 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'Movie',
       tableName: 'movies'
     }
-  )
-  return Movie
-}
+  );
+  return Movie;
+};
