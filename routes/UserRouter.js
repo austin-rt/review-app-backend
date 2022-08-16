@@ -18,5 +18,11 @@ Router.delete(
   middleware.verifyToken,
   controller.DeleteUser
 )
+Router.get(
+  '/session',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.CheckSession
+)
 
 module.exports = Router
