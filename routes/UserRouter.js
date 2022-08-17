@@ -3,7 +3,7 @@ const controller = require('../controllers/UserController')
 const middleware = require('../middleware')
 
 Router.get('/', controller.GetUsers)
-Router.get('/:user_id', controller.GetUserById)
+
 Router.post('/register', controller.RegisterUser)
 Router.post('/login', controller.LoginUser)
 Router.put(
@@ -24,5 +24,7 @@ Router.get(
   middleware.verifyToken,
   controller.CheckSession
 )
+
+Router.get('/:user_id', controller.GetUserById)
 
 module.exports = Router

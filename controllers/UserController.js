@@ -14,6 +14,7 @@ const GetUsers = async (req, res) => {
 }
 
 const GetUserById = async (req, res) => {
+  console.log(req.params)
   try {
     const user = await User.findByPk(req.params.user_id, {
       include: [{ model: Review, as: 'user_reviews' }]
