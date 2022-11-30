@@ -16,11 +16,11 @@
 
 ---
 
-### **_Resources_**
+### **_Links_**
 
 [Frontend Repo](https://github.com/deontelaborde/review-app-frontend)
 
-[Deployed Site](https://google.com)
+[Deployed Site](https://rated-our.vercel.app/)
 
 ---
 
@@ -32,6 +32,26 @@ So sign up, login and get your Roger Ebert on!
 Let's go to the movies!
 
 ---
+
+### API V1
+
+Available routes are as follows:
+
+- `/users`
+  - `/register` - register new user
+  - `login` - login user
+  - `/:user_id` - get user by id
+  - `/:user_id` - update user (protected)
+  - `/:user_id` - delete user (protected)
+  - `/session` - check session for token
+- `/movies`
+  - `/` - get all movies
+  - `/:movie_id` - get movie by id
+- `/reviews`
+  - `/` - get all reviews
+  - `/:movie_id/:user_id` - post review (protected)
+  - `/:review_id` - update review (protected)
+  - `/:review_id` - delete review (protected)
 
 ### **_Technologies Used_**
 
